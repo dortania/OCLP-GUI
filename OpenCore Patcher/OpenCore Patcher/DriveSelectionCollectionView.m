@@ -21,6 +21,7 @@
     /* NSCollectionView "deselect all" workaround */
     [self setValue:[[NSMutableIndexSet alloc] init] forKey:@"_selectionIndexes"];
     
+    
     [super setContent:content];
 }
 
