@@ -1,0 +1,10 @@
+/* 
+  Errors.strings
+  OpenCore Patcher
+
+  Created by Collin Mistr on 6/7/21.
+  Copyright (c) 2021 Dortania. All rights reserved.
+*/
+
+"ERR_PYTHON3_MSG" = "Python 3 Missing";
+"ERR_PYTHON3_INFO" = "Python 3 is not installed on this system. Please install Python 3 before using this application.";
