@@ -26,5 +26,7 @@
 + (OCDriveManager *)sharedInstance;
 -(void)startDASession;
 -(void)endDASession;
+-(void)handleDriveAttached:(OCDriveInfo *)drive;
+-(void)handleDriveDetached:(OCDriveInfo *)drive;
 
 @end

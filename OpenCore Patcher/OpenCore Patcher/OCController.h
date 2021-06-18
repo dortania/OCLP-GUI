@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "STPrivilegedTask.h"
+#import "OCPatchHandler.h"
+#import "OCDriveInfo.h"
 
 @interface OCController : NSObject
 
 + (OCController *)sharedInstance;
--(BOOL)python3IsInstalled;
-
-
+-(HelperStatus)startBuildAndInstallToDrive:(OCDriveInfo *)drive;
 
 @end

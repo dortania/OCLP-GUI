@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainMenuViewController">
             <connections>
                 <outlet property="driveSelectionViewPopover" destination="4pP-1l-Y0G" id="wPc-dF-UB0"/>
+                <outlet property="flagsViewPopover" destination="iIJ-4h-6IX" id="aXO-HT-rIt"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -53,14 +54,30 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="startPatchSystemVolume:" target="-2" id="YU8-XK-sgA"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" id="jVz-OM-QWg">
+                    <rect key="frame" x="408" y="261" width="40" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="settings" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dMX-Oa-Qa6">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="showFlagsView:" target="-2" id="CPh-AU-4Op"/>
+                    </connections>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="384" y="369.5"/>
+            <point key="canvasLocation" x="491" y="460.5"/>
         </customView>
         <popover behavior="t" id="4pP-1l-Y0G"/>
+        <popover behavior="t" id="iIJ-4h-6IX"/>
     </objects>
     <resources>
         <image name="OC-Build" width="256" height="256"/>
         <image name="ProductPageIcon-test" width="928" height="928"/>
+        <image name="settings" width="80" height="80"/>
     </resources>
 </document>

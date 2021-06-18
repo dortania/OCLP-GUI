@@ -15,15 +15,10 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    if ([[OCController sharedInstance] python3IsInstalled]) {
-        if (!mw) {
-            mw = [[MainWindow alloc] initWithWindowNibName:@"MainWindow"];
-        }
-        [mw showWindow:self];
-    } else {
-        [[OCErrorHandler sharedInstance] handleApplicationError:ApplicationErrorNoPython];
-        [[NSApplication sharedApplication] terminate:nil];
+    if (!mw) {
+        mw = [[MainWindow alloc] initWithWindowNibName:@"MainWindow"];
     }
+    [mw showWindow:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

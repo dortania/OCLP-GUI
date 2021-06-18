@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenCore Patcher/OCDriveInfo.h"
-            timestampString = "645213883.534047"
+            timestampString = "645585118.370463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "-iconBundlePath"
             landmarkType = "4">
          </BreakpointContent>

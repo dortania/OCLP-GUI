@@ -13,7 +13,7 @@
 
 @protocol DriveSelectionViewDelegate <NSObject>
 
--(void)viewChangedToWidth:(CGFloat)width;
+-(void)DriveSelectionViewChangedToWidth:(CGFloat)width;
 -(void)beginInstallOnDrive:(OCDriveInfo *)drive;
 
 @end

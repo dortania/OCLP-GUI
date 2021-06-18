@@ -12,6 +12,8 @@
 
 -(id)init {
     self = [super init];
+    _physical = YES;
+    _hasESP = NO;
     return self;
 }
 
@@ -25,7 +27,6 @@
     _iconBundle = [icon objectForKey:@"CFBundleIdentifier"];
     _iconName = [icon objectForKey:@"IOBundleResourceFile"];
     _appearanceTime = [[diskInfo objectForKey:@"DAAppearanceTime"] doubleValue];
-    _physical = YES;
     if ([diskInfo objectForKey:@"DAMediaUUID"]) {
         _physical = NO;
     }

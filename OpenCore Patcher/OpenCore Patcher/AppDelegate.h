@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "OCController.h"
 #import "MainWindow.h"
-#import "OCErrorHandler.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     MainWindow *mw;

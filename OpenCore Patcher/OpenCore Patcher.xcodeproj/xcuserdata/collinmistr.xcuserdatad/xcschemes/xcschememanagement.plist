@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>oclpd.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>8775F80D266EFA0D00232783</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>878D3E4A267AE5CF00EA4C33</key>
 		<dict>
 			<key>primary</key>
 			<true/>

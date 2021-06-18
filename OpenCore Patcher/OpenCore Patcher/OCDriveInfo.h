@@ -10,6 +10,8 @@
 #import <IOKit/kext/KextManager.h>
 #import <DiskArbitration/DiskArbitration.h>
 
+#define EXPECTED_ESP_NUM 1
+
 @interface OCDriveInfo : NSObject
 
 -(id)initWithDiskRef:(DADiskRef)ref;
@@ -20,6 +22,7 @@
 @property (nonatomic, strong) NSString *iconName;
 @property (nonatomic, assign) double appearanceTime;
 @property (nonatomic, assign) BOOL physical;
+@property (nonatomic, assign) BOOL hasESP;
 -(NSString *)iconBundlePath;
 -(BOOL)isEqual:(OCDriveInfo *)other;
 

@@ -11,15 +11,13 @@
 void DADiskAttached(DADiskRef disk, void *context) {
     
     OCDriveInfo *inf = [[OCDriveInfo alloc] initWithDiskRef:disk];
-    if (inf.physical) {
-        [[[OCDriveManager sharedInstance] delegate] driveWasAttached:inf];
-    }
+    [[OCDriveManager sharedInstance] handleDriveAttached:inf];
 }
 
 void DADiskDetached(DADiskRef disk, void *context) {
     
     OCDriveInfo *inf = [[OCDriveInfo alloc] initWithDiskRef:disk];
-    [[[OCDriveManager sharedInstance] delegate] driveWasDetached:inf];
+    [[OCDriveManager sharedInstance] handleDriveDetached:inf];
 }
 
 @implementation OCDriveManager
@@ -46,5 +44,17 @@ void DADiskDetached(DADiskRef disk, void *context) {
     CFRelease(session);
     session = nil;
 }
-
+-(void)handleDriveAttached:(OCDriveInfo *)drive {
+    NSString *ESPBSD = [NSString stringWithFormat:@"%@s%d", drive.bsdName, EXPECTED_ESP_NUM];
+    DADiskRef ESP = DADiskCreateFromBSDName(kCFAllocatorDefault, session, [ESPBSD UTF8String]);
+    NSDictionary *espInfo = (__bridge NSDictionary *)DADiskCopyDescription(ESP);
+    if ([espInfo objectForKey:@"DAMediaName"]) {
+        NSString *mediaName = [espInfo objectForKey:@"DAMediaName"];
+        drive.hasESP = [mediaName isEqualToString:@"EFI System Partition"];
+    }
+    [self.delegate driveWasAttached:drive];
+}
+-(void)handleDriveDetached:(OCDriveInfo *)drive {
+    [self.delegate driveWasDetached:drive];
+}
 @end

@@ -10,12 +10,17 @@
 #import "OCController.h"
 #import "DriveSelectionViewController.h"
 #import "OCInstallationViewController.h"
+#import "FlagsViewController.h"
 
-@interface MainMenuViewController : WindowContentViewController <DriveSelectionViewDelegate> {
+@interface MainMenuViewController : WindowContentViewController <DriveSelectionViewDelegate, FlagsViewDelegate> {
     DriveSelectionViewController *driveSelectionView;
+    FlagsViewController *flagsView;
 }
 
 @property (strong) IBOutlet NSPopover *driveSelectionViewPopover;
+@property (strong) IBOutlet NSPopover *flagsViewPopover;
 - (IBAction)startBuildAndInstall:(id)sender;
+- (IBAction)startPatchSystemVolume:(id)sender;
+- (IBAction)showFlagsView:(id)sender;
 
 @end

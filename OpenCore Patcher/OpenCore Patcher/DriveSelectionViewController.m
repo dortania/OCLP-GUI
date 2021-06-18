@@ -37,7 +37,7 @@
         if (width > [[NSScreen mainScreen] frame].size.width) {
             width = [[NSScreen mainScreen] frame].size.width - 100;
         }
-        [self.delegate viewChangedToWidth:width];
+        [self.delegate DriveSelectionViewChangedToWidth:width];
     }
 }
 
@@ -53,12 +53,14 @@
 }
 
 -(void)driveWasAttached:(OCDriveInfo *)drive {
-    dispatch_async(dispatch_get_main_queue(), ^(void) {
-        [availableDrives addObject:drive];
-        [self.driveSelectionCollectionView setContent:availableDrives];
-        [self adaptViewSize];
-        
-    });
+    if (drive.physical && drive.hasESP) {
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [availableDrives addObject:drive];
+            [self.driveSelectionCollectionView setContent:availableDrives];
+            [self adaptViewSize];
+            
+        });
+    }
 }
 
 -(void)driveWasDetached:(OCDriveInfo *)drive {
