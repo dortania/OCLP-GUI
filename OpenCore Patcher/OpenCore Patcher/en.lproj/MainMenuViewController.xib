@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="driveSelectionViewPopover" destination="4pP-1l-Y0G" id="wPc-dF-UB0"/>
                 <outlet property="flagsViewPopover" destination="iIJ-4h-6IX" id="aXO-HT-rIt"/>
+                <outlet property="versionField" destination="0SM-CJ-Kqb" id="MmJ-V8-GvF"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

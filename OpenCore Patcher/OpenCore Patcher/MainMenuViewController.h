@@ -19,6 +19,8 @@
 
 @property (strong) IBOutlet NSPopover *driveSelectionViewPopover;
 @property (strong) IBOutlet NSPopover *flagsViewPopover;
+@property (strong) IBOutlet NSTextField *versionField;
+
 - (IBAction)startBuildAndInstall:(id)sender;
 - (IBAction)startPatchSystemVolume:(id)sender;
 - (IBAction)showFlagsView:(id)sender;

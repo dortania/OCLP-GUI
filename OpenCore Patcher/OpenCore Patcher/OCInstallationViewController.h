@@ -8,9 +8,19 @@
 
 #import "WindowContentViewController.h"
 #import "MainMenuViewController.h"
+#import "OCController.h"
+#import "OCLoggingManager.h"
 
-@interface OCInstallationViewController : WindowContentViewController
+@interface OCInstallationViewController : WindowContentViewController <OCLoggingManagerDelegate, OCControllerDelegate>
+
+@property (strong) IBOutlet NSButton *quitButton;
+@property (strong) IBOutlet NSButton *mainMenuButton;
+@property (strong) IBOutlet NSTextView *logTextView;
+@property (strong) IBOutlet NSProgressIndicator *progressIndicator;
 
 - (IBAction)returnToMain:(id)sender;
+- (IBAction)quitApp:(id)sender;
+
+-(void)beginInstallationOnDrive:(OCDriveInfo *)drive;
 
 @end

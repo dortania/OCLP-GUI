@@ -31,6 +31,8 @@
     }
     [self.flagsViewPopover setContentViewController:flagsView];
     [self.flagsViewPopover setDelegate:flagsView];
+    
+    [self.versionField setStringValue:[NSString stringWithFormat:@"v%@", [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]]];
 }
 
 - (IBAction)startBuildAndInstall:(id)sender {
@@ -52,7 +54,6 @@
 }
 
 -(void)FlagsViewChangedToHeight:(CGFloat)height {
-    //[self.driveSelectionViewPopover setContentSize:CGSizeMake(width, driveSelectionView.view.frame.size.height)];
     [self.flagsViewPopover setContentSize:CGSizeMake(flagsView.view.frame.size.width, height)];
 }
 

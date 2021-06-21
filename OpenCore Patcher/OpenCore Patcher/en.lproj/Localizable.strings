@@ -6,5 +6,8 @@
   Copyright (c) 2021 Dortania. All rights reserved.
 */
 
-"ERR_PYTHON3_MSG" = "Python 3 Missing";
-"ERR_PYTHON3_INFO" = "Python 3 is not installed on this system. Please install Python 3 before using this application.";
+"ERR_INSTALL_GENERAL_MSG" = "Error";
+"ERR_INSTALL_GENERAL_INFO" = "An error occurred while building and installing OpenCore. Please check the log for further details.";
+
+"ERR_HELPER_MSG" = "Helper Error";
+"ERR_HELPER_INFO" = "An error occurred while launching the helper process. (%d)";

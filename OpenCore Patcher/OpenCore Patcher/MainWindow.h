@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MainMenuViewController.h"
 #import "OCInstallationViewController.h"
+#import "OCErrorHandler.h"
 
 @interface MainWindow : NSWindowController <WindowContentViewControllerDelegate> {
     WindowContentViewController *visibleViewController;

@@ -10,6 +10,8 @@
 #import <DiskArbitration/DiskArbitration.h>
 #import "OCDriveInfo.h"
 
+#define EXPECTED_BOOT_DISK_NUM 0
+
 @protocol OCDriveManagerDelegate <NSObject>
 
 -(void)driveWasAttached:(OCDriveInfo *)drive;
@@ -28,5 +30,6 @@
 -(void)endDASession;
 -(void)handleDriveAttached:(OCDriveInfo *)drive;
 -(void)handleDriveDetached:(OCDriveInfo *)drive;
+-(OCDriveInfo *)getBootDrive;
 
 @end

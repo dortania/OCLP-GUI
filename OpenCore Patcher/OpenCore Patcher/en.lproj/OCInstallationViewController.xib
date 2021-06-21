@@ -7,6 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="OCInstallationViewController">
             <connections>
+                <outlet property="logTextView" destination="1kl-qz-di9" id="a6h-7W-Rzg"/>
+                <outlet property="mainMenuButton" destination="TmF-eH-cWx" id="Rzc-Xv-BRl"/>
+                <outlet property="progressIndicator" destination="2a0-9C-LmI" id="TeX-rl-1XQ"/>
+                <outlet property="quitButton" destination="YzZ-6v-fou" id="M85-Lb-8bu"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -33,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView editable="NO" importsGraphics="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="1kl-qz-di9">
-                                <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                <rect key="frame" x="0.0" y="0.0" width="223" height="370"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="minSize" width="411" height="370"/>
@@ -72,7 +76,14 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="quitApp:" target="-2" id="sEf-UD-i0j"/>
+                    </connections>
                 </button>
+                <progressIndicator hidden="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" id="2a0-9C-LmI">
+                    <rect key="frame" x="97" y="446" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </progressIndicator>
             </subviews>
             <point key="canvasLocation" x="280" y="333.5"/>
         </customView>

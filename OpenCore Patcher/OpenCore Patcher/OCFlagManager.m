@@ -17,7 +17,7 @@
     for (NSDictionary *d in flagsProto) {
         [flagObjects addObject:[[OCFlag alloc] initWithDict:d]];
     }
-    _flags = [NSArray arrayWithArray:flagObjects];
+    _optionalFlags = [NSArray arrayWithArray:flagObjects];
     return self;
 }
 
@@ -28,6 +28,24 @@
         instance = [[self alloc] init];
     });
     return instance;
+}
+
+-(NSArray *)buildArgs {
+    
+    NSMutableArray *args = [[NSMutableArray alloc] init];
+    [args addObject:@"--build"];
+    
+    for (OCFlag *flag in self.optionalFlags) {
+        if (flag.enabled) {
+            [args addObject:flag.arg];
+        }
+    }
+    if (![self.targetModel isEqualToString:self.machineModel]) {
+        [args addObject:@"--model"];
+        [args addObject:self.targetModel];
+    }
+    
+    return args;
 }
 
 @end

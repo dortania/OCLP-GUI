@@ -7,14 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OCDriveInfo.h"
 #import "OCFlag.h"
 
 #define OCFlagsPlist "OCFlags.plist"
 
 @interface OCFlagManager : NSObject
 
-@property (nonatomic, strong) NSArray *flags;
+@property (nonatomic, strong) NSArray *optionalFlags;
+@property (nonatomic, strong) NSString *targetModel;
+@property (nonatomic, strong) NSString *machineModel;
+
 
 + (OCFlagManager *)sharedInstance;
+-(NSArray *)buildArgs;
 
 @end

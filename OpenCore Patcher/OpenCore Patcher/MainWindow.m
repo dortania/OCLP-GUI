@@ -30,7 +30,6 @@
 
 -(void)setWindowVisibleViewController:(WindowContentViewController *)controller {
     [visibleViewController.view removeFromSuperview];
-    //[self.window.contentView replaceSubview:visibleViewController.view with:controller.view];
     CGFloat windowTitleHeight = self.window.frame.size.height - visibleViewController.view.frame.size.height;
     NSRect frame = self.window.frame;
     frame.size.height = controller.view.frame.size.height + windowTitleHeight;

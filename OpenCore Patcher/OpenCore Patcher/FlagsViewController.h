@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "OCFlagManager.h"
+#import "OCController.h"
 
 @protocol FlagsViewDelegate <NSObject>
 
@@ -20,5 +21,8 @@
 @property (strong) id <FlagsViewDelegate> delegate;
 
 @property (strong) IBOutlet NSTableView *flagsTableView;
+@property (strong) IBOutlet NSPopUpButton *modelSelectionList;
+
+- (IBAction)setDesiredModel:(id)sender;
 
 @end

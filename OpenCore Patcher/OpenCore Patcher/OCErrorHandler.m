@@ -24,14 +24,7 @@
     return instance;
 }
 
--(void)handleApplicationError:(ApplicationError)err {
-    NSString *info, *msg;
-    switch (err) {
-        case ApplicationErrorNoPython:
-            info = [[NSBundle mainBundle] localizedStringForKey:@"ERR_PYTHON3_INFO" value:nil table:nil];
-            msg = [[NSBundle mainBundle] localizedStringForKey:@"ERR_PYTHON3_MSG" value:nil table:nil];
-            
-    }
+-(void)displayAlertWithMessage:(NSString *)msg inlcudingInfo:(NSString *)info {
     if (!self.delegate) {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setAlertStyle:NSCriticalAlertStyle];
@@ -39,8 +32,18 @@
         [alert setInformativeText:info];
         [alert addButtonWithTitle:@"OK"];
         [alert runModal];
+    } else {
+        
     }
 }
 
+-(void)handleApplicationError:(ApplicationError)err {
+    
+    
+}
+
+-(void)handleHelperLaunchError:(OSStatus)err {
+    
+}
 
 @end

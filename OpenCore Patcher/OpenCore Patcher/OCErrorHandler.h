@@ -10,11 +10,13 @@
 
 
 typedef enum {
-    ApplicationErrorNoPython = 1
+    ApplicationErrorHelperLaunchFailed = 1
 } ApplicationError;
 
 
 @protocol OCErrorHandlerDelegate <NSObject>
+
+-(void)displayAlertWithMessage:(NSString *)msg andInfo:(NSString *)info;
 
 @end
 

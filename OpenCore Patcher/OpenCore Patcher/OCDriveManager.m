@@ -40,9 +40,11 @@ void DADiskDetached(DADiskRef disk, void *context) {
     DARegisterDiskDisappearedCallback(session, kDADiskDescriptionMatchMediaWhole, DADiskDetached, nil);
 }
 -(void)endDASession {
-    DASessionSetDispatchQueue(session, NULL);
-    CFRelease(session);
-    session = nil;
+    if (session) {
+        DASessionSetDispatchQueue(session, NULL);
+        CFRelease(session);
+        session = nil;
+    }
 }
 -(void)handleDriveAttached:(OCDriveInfo *)drive {
     NSString *ESPBSD = [NSString stringWithFormat:@"%@s%d", drive.bsdName, EXPECTED_ESP_NUM];
@@ -56,5 +58,9 @@ void DADiskDetached(DADiskRef disk, void *context) {
 }
 -(void)handleDriveDetached:(OCDriveInfo *)drive {
     [self.delegate driveWasDetached:drive];
+}
+-(OCDriveInfo *)getBootDrive {
+    DADiskRef bootDisk = DADiskCreateFromBSDName(kCFAllocatorDefault, session, [[NSString stringWithFormat:@"%d", EXPECTED_BOOT_DISK_NUM] UTF8String]);
+    return [[OCDriveInfo alloc] initWithDiskRef:bootDisk];
 }
 @end
