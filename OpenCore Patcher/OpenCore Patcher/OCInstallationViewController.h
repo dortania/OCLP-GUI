@@ -18,6 +18,7 @@
 @property (strong) IBOutlet NSButton *mainMenuButton;
 @property (strong) IBOutlet NSTextView *logTextView;
 @property (strong) IBOutlet NSProgressIndicator *progressIndicator;
+@property (strong) IBOutlet NSTextField *titleField;
 
 - (IBAction)returnToMain:(id)sender;
 - (IBAction)quitApp:(id)sender;

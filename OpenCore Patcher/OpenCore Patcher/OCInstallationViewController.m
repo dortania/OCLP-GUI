@@ -47,6 +47,7 @@
 }
 
 -(void)beginInstallationOnDrive:(OCDriveInfo *)drive {
+    [self.titleField setStringValue:@"Building OpenCore"];
     [self disableUI];
     [[OCController sharedInstance] startBuildAndInstallToDrive:drive];
     [[OCLoggingManager sharedInstance] resetLog];
@@ -54,6 +55,7 @@
 }
 
 -(void)beginPatchingSystemVolume {
+    [self.titleField setStringValue:@"Patching System"];
     [self disableUI];
     [[OCController sharedInstance] startSystemVolumePatching];
     [[OCLoggingManager sharedInstance] resetLog];

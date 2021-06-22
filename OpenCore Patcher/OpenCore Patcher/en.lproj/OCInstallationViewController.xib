@@ -11,6 +11,7 @@
                 <outlet property="mainMenuButton" destination="TmF-eH-cWx" id="Rzc-Xv-BRl"/>
                 <outlet property="progressIndicator" destination="2a0-9C-LmI" id="TeX-rl-1XQ"/>
                 <outlet property="quitButton" destination="YzZ-6v-fou" id="M85-Lb-8bu"/>
+                <outlet property="titleField" destination="HVZ-ov-viQ" id="HxH-K3-jdJ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
