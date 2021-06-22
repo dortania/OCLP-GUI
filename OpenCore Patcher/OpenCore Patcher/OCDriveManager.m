@@ -98,13 +98,6 @@ void DADiskUnmounted(DADiskRef disk, DADissenterRef dissenter, void *context) {
         [self.delegate drive:drive wasUnmountedWithResult:result];
     }
 }
--(OCDriveInfo *)getBootDrive {
-    [self startDASession];
-    DADiskRef bootDisk = DADiskCreateFromBSDName(kCFAllocatorDefault, session, [[NSString stringWithFormat:@"disk%d", EXPECTED_BOOT_DISK_NUM] UTF8String]);
-    OCDriveInfo *inf = [[OCDriveInfo alloc] initWithDiskRef:bootDisk];
-    inf.esp = [self getESPForDrive:inf];
-    return inf;
-}
 -(void)mountDrive:(OCDriveInfo *)drive toPath:(NSString *)mntPath {
     DADiskRef disk = DADiskCreateFromBSDName(kCFAllocatorDefault, session, [drive.bsdName UTF8String]);
     CFStringRef args[2];

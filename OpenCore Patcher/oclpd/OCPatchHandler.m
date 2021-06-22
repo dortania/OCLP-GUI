@@ -98,6 +98,26 @@
     return PatchHandlerResultSuccess;
 }
 
+-(PatchHandlerResult)patchSystemVolume {
+    NSTask *OCPythonBin  = [[NSTask alloc] init];
+    [OCPythonBin setLaunchPath:[self.resourcesPath stringByAppendingPathComponent:@MAIN_BINARY]];
+    [OCPythonBin setArguments:[self.flagManager sysVolPatchArgs]];
+    [OCPythonBin setCurrentDirectoryPath:@OC_BUILD_PATH];
+    [OCPythonBin setEnvironment:@{@"TERM": @"xterm", @"PATH":@"/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"}];
+    NSPipe *out = [NSPipe pipe];
+    [OCPythonBin setStandardOutput:out];
+    [OCPythonBin setStandardError:out];
+    [self.loggingClient setOutputPipe:out];
+    [OCPythonBin launch];
+    [OCPythonBin waitUntilExit];
+    NSInteger err = [OCPythonBin terminationStatus];
+    if (err) {
+        return PatchHandlerResultFailedPatchSysVol;
+    }
+    [self.loggingClient addLogEntry:@"Done! Operation completed successfully."];
+    return PatchHandlerResultSuccess;
+}
+
 #pragma mark Delegated Functions
 
 -(void)drive:(OCDriveInfo *)drive wasMountedWithResult:(DMStatus)result {

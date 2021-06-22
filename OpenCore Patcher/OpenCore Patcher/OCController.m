@@ -45,7 +45,12 @@
             ph.resourcesPath = [[NSBundle mainBundle] resourcePath];
             ph.loggingClient.delegate = [OCLoggingManager sharedInstance];
             PatchHandlerResult res = [ph buildOpenCore];
-            
+            if (res) {
+                [ph terminateHelper];
+                dispatch_async (dispatch_get_main_queue(), ^{
+                    [self.delegate helperFinishedProcessWithResult:res];
+                });
+            }
             res = [ph installOpenCoreToDrive:drive];
             
             [ph terminateHelper];
@@ -58,7 +63,34 @@
         }
     });
 }
-
+-(void)startSystemVolumePatching {
+    NSLog(@"Initializing OC Daemon");
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        STPrivilegedTask *t = [[STPrivilegedTask alloc] initWithLaunchPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"oclpd"]];
+        OSStatus err = [t launch];
+        if (err != errAuthorizationSuccess) {
+            dispatch_async (dispatch_get_main_queue(), ^{
+                [self.delegate helperFailedLaunchWithError:err];
+            });
+        }
+        else {
+            sleep(1);
+            OCPatchHandler *ph = (OCPatchHandler *)[NSConnection rootProxyForConnectionWithRegisteredName:@SERVER_ID host:nil];
+            ph.flagManager = [OCFlagManager sharedInstance];
+            ph.resourcesPath = [[NSBundle mainBundle] resourcePath];
+            ph.loggingClient.delegate = [OCLoggingManager sharedInstance];
+            PatchHandlerResult res = [ph patchSystemVolume];
+            
+            [ph terminateHelper];
+            NSLog(@"Done");
+            
+            dispatch_async (dispatch_get_main_queue(), ^{
+                [self.delegate helperFinishedProcessWithResult:res];
+            });
+            
+        }
+    });
+}
 -(NSArray *)getMacModelsList {
     return [[NSArray alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@MacModelsPlist]];
 }

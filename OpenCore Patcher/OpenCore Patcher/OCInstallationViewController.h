@@ -23,5 +23,6 @@
 - (IBAction)quitApp:(id)sender;
 
 -(void)beginInstallationOnDrive:(OCDriveInfo *)drive;
+-(void)beginPatchingSystemVolume;
 
 @end

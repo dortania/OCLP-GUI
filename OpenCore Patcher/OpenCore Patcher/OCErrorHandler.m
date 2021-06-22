@@ -60,6 +60,9 @@
         case PatchHandlerResultFailedOCBuild:
             [self displayAlertWithMessage:NSLocalizedString(@"ERR_OC_BUILD_FAIL_MSG", nil) inlcudingInfo:NSLocalizedString(@"ERR_OC_BUILD_FAIL_INFO", nil)];
             break;
+        case PatchHandlerResultFailedPatchSysVol:
+            [self displayAlertWithMessage:NSLocalizedString(@"ERR_OC_SYS_PATCH_FAIL_MSG", nil) inlcudingInfo:NSLocalizedString(@"ERR_OC_SYS_PATCH_FAIL_INFO", nil)];
+            break;
         case PatchHandlerResultSuccess:
             break;
             

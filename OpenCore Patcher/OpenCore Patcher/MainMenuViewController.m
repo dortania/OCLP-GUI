@@ -40,10 +40,9 @@
 }
 
 - (IBAction)startPatchSystemVolume:(id)sender {
-    [[OCDriveManager sharedInstance] startDASession];
-    OCDriveInfo *bootDrive = [[OCDriveManager sharedInstance] getBootDrive];
-    [[OCDriveManager sharedInstance] endDASession];
-    [self beginInstallOnDrive:bootDrive];
+    OCInstallationViewController *installationView = [[OCInstallationViewController alloc] initWithNibName:@"OCInstallationViewController" bundle:nil];
+    [self.delegate setWindowVisibleViewController:installationView];
+    [installationView beginPatchingSystemVolume];
 }
 
 - (IBAction)showFlagsView:(id)sender {

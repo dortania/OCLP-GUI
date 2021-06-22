@@ -38,7 +38,6 @@ typedef enum {
 -(void)handleDriveDetached:(OCDriveInfo *)drive;
 -(void)handleDrive:(OCDriveInfo *)drive mountedWithResult:(DMStatus)result;
 -(void)handleDrive:(OCDriveInfo *)drive unmountedWithResult:(DMStatus)result;
--(OCDriveInfo *)getBootDrive;
 -(void)mountDrive:(OCDriveInfo *)drive toPath:(NSString *)mntPath;
 -(void)unmountDrive:(OCDriveInfo *)drive;
 

@@ -23,3 +23,6 @@
 
 "ERR_OC_BUILD_FAIL_MSG" = "Error building OpenCore";
 "ERR_OC_BUILD_FAIL_INFO" = "An error occurred while building OpenCore. Please check the log for further info.";
+
+"ERR_OC_SYS_PATCH_FAIL_MSG" = "Error patching System Volume";
+"ERR_OC_SYS_PATCH_FAIL_INFO" = "An error occurred while patching your system volume. Please check the log for further info.";

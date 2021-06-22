@@ -47,5 +47,7 @@
     
     return args;
 }
-
+-(NSArray *)sysVolPatchArgs {
+    return [NSArray arrayWithObjects:@"--patch_sys_vol", nil];
+}
 @end

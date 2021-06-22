@@ -21,7 +21,8 @@ typedef enum {
     PatchHandlerResultSuccess = 0,
     PatchHandlerResultFailedESPMount = 1,
     PatchHandlerResultFailedESPUnmount = 2,
-    PatchHandlerResultFailedOCBuild = 3
+    PatchHandlerResultFailedOCBuild = 3,
+    PatchHandlerResultFailedPatchSysVol = 4
 }PatchHandlerResult;
 
 @interface OCPatchHandler : NSObject <OCDriveManagerDelegate> {
@@ -40,5 +41,6 @@ typedef enum {
 -(oneway void)terminateHelper;
 -(PatchHandlerResult)buildOpenCore;
 -(PatchHandlerResult)installOpenCoreToDrive:(OCDriveInfo *)drive;
+-(PatchHandlerResult)patchSystemVolume;
 
 @end

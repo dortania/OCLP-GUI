@@ -28,6 +28,7 @@
 
 + (OCController *)sharedInstance;
 -(void)startBuildAndInstallToDrive:(OCDriveInfo *)drive;
+-(void)startSystemVolumePatching;
 -(NSArray *)getMacModelsList;
 -(NSString *)getMachineModel;
 

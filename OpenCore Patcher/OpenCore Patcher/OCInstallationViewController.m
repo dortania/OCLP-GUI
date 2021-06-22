@@ -53,6 +53,13 @@
     [self.logTextView setString:[OCLoggingManager sharedInstance].log];
 }
 
+-(void)beginPatchingSystemVolume {
+    [self disableUI];
+    [[OCController sharedInstance] startSystemVolumePatching];
+    [[OCLoggingManager sharedInstance] resetLog];
+    [self.logTextView setString:[OCLoggingManager sharedInstance].log];
+}
+
 #pragma mark Delegated Functions
 
 -(void)helperFailedLaunchWithError:(OSStatus)err {

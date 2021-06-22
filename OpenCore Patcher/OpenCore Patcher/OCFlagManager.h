@@ -21,5 +21,6 @@
 
 + (OCFlagManager *)sharedInstance;
 -(NSArray *)buildArgs;
+-(NSArray *)sysVolPatchArgs;
 
 @end
