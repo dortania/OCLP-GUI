@@ -10,4 +10,16 @@
 "ERR_INSTALL_GENERAL_INFO" = "An error occurred while building and installing OpenCore. Please check the log for further details.";
 
 "ERR_HELPER_MSG" = "Helper Error";
-"ERR_HELPER_INFO" = "An error occurred while launching the helper process. (%d)";
+"ERR_HELPER_INFO" = "An error occurred while launching the helper process.";
+
+"ERR_UNKNOWN_MSG" = "Unknown Error";
+"ERR_UNKNOWN_INFO" = "An unknown error occurred.";
+
+"ERR_MOUNT_ESP_MSG" = "Error mounting EFI System Partition";
+"ERR_MOUNT_ESP_INFO" = "An error occurred while mounting the EFI System Partition. The process cannot continue.";
+
+"ERR_UNMOUNT_ESP_MSG" = "Error unmounting EFI System Partition";
+"ERR_UNMOUNT_ESP_INFO" = "An error occurred while unmounting the EFI System Partition.";
+
+"ERR_OC_BUILD_FAIL_MSG" = "Error building OpenCore";
+"ERR_OC_BUILD_FAIL_INFO" = "An error occurred while building OpenCore. Please check the log for further info.";

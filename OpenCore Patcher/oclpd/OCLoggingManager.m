@@ -23,10 +23,6 @@
     });
     return instance;
 }
--(void)addLogEntry:(NSString *)entry {
-    self.log = [self.log stringByAppendingString:[NSString stringWithFormat:@"\n\n%@\n\n", entry]];
-    [self.delegate logDidUpdateWithText:self.log];
-}
 -(void)resetLog {
     self.log = @"";
     [self.delegate logDidUpdateWithText:self.log];
@@ -35,8 +31,10 @@
 #pragma mark Delegated Functions
 
 -(void)logDidUpdateWithText:(NSString *)text {
-    self.log = [self.log stringByAppendingString:text];
-    [self.delegate logDidUpdateWithText:self.log];
+    dispatch_async (dispatch_get_main_queue(), ^{
+        self.log = [self.log stringByAppendingString:text];
+        [self.delegate logDidUpdateWithText:self.log];
+    });
 }
 
 @end

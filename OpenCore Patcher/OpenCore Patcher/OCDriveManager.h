@@ -12,11 +12,17 @@
 
 #define EXPECTED_BOOT_DISK_NUM 0
 
-@protocol OCDriveManagerDelegate <NSObject>
+typedef enum {
+    DMStatusSuccess = 0,
+    DMStatusError = 1
+}DMStatus;
 
+@protocol OCDriveManagerDelegate <NSObject>
+@optional
 -(void)driveWasAttached:(OCDriveInfo *)drive;
 -(void)driveWasDetached:(OCDriveInfo *)drive;
-
+-(void)drive:(OCDriveInfo *)drive wasMountedWithResult:(DMStatus)result;
+-(void)drive:(OCDriveInfo *)drive wasUnmountedWithResult:(DMStatus)result;
 @end
 
 @interface OCDriveManager : NSObject {
@@ -30,6 +36,10 @@
 -(void)endDASession;
 -(void)handleDriveAttached:(OCDriveInfo *)drive;
 -(void)handleDriveDetached:(OCDriveInfo *)drive;
+-(void)handleDrive:(OCDriveInfo *)drive mountedWithResult:(DMStatus)result;
+-(void)handleDrive:(OCDriveInfo *)drive unmountedWithResult:(DMStatus)result;
 -(OCDriveInfo *)getBootDrive;
+-(void)mountDrive:(OCDriveInfo *)drive toPath:(NSString *)mntPath;
+-(void)unmountDrive:(OCDriveInfo *)drive;
 
 @end

@@ -11,7 +11,7 @@
 #import "OCInstallationViewController.h"
 #import "OCErrorHandler.h"
 
-@interface MainWindow : NSWindowController <WindowContentViewControllerDelegate> {
+@interface MainWindow : NSWindowController <WindowContentViewControllerDelegate, OCErrorHandlerDelegate> {
     WindowContentViewController *visibleViewController;
 }
 

@@ -13,7 +13,6 @@
 -(id)init {
     self = [super init];
     _physical = YES;
-    _hasESP = NO;
     return self;
 }
 

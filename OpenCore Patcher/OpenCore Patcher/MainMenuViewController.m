@@ -40,7 +40,10 @@
 }
 
 - (IBAction)startPatchSystemVolume:(id)sender {
-    [self.delegate setWindowVisibleViewController:[[OCInstallationViewController alloc] initWithNibName:@"OCInstallationViewController" bundle:nil]];
+    [[OCDriveManager sharedInstance] startDASession];
+    OCDriveInfo *bootDrive = [[OCDriveManager sharedInstance] getBootDrive];
+    [[OCDriveManager sharedInstance] endDASession];
+    [self beginInstallOnDrive:bootDrive];
 }
 
 - (IBAction)showFlagsView:(id)sender {
@@ -58,7 +61,9 @@
 }
 
 -(void)beginInstallOnDrive:(OCDriveInfo *)drive {
-    [self.delegate setWindowVisibleViewController:[[OCInstallationViewController alloc] initWithNibName:@"OCInstallationViewController" bundle:nil]];
+    OCInstallationViewController *installationView = [[OCInstallationViewController alloc] initWithNibName:@"OCInstallationViewController" bundle:nil];
+    [self.delegate setWindowVisibleViewController:installationView];
+    [installationView beginInstallationOnDrive:drive];
 }
 
 @end

@@ -29,7 +29,7 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ng7-tO-xNs">
                                 <rect key="frame" x="18" y="25" width="146" height="151"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OC-Picker-External" id="ead-9a-Q7D"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OC-Build" id="ead-9a-Q7D"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uXm-11-9Ml">
                                 <rect key="frame" x="16" y="7" width="150" height="22"/>
@@ -50,6 +50,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="OC-Picker-External" width="256" height="256"/>
+        <image name="OC-Build" width="256" height="256"/>
     </resources>
 </document>

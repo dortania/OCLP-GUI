@@ -28,7 +28,7 @@
     return self;
 }
 
--(void)startBuildAndInstall {
+-(void)startBuildAndInstallToDrive:(OCDriveInfo *)drive {
     NSLog(@"Initializing OC Daemon");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         STPrivilegedTask *t = [[STPrivilegedTask alloc] initWithLaunchPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"oclpd"]];
@@ -44,7 +44,9 @@
             ph.flagManager = [OCFlagManager sharedInstance];
             ph.resourcesPath = [[NSBundle mainBundle] resourcePath];
             ph.loggingClient.delegate = [OCLoggingManager sharedInstance];
-            NSInteger res = [ph buildOpenCoreAtPath:@""];
+            PatchHandlerResult res = [ph buildOpenCore];
+            
+            res = [ph installOpenCoreToDrive:drive];
             
             [ph terminateHelper];
             NSLog(@"Done");
@@ -52,10 +54,6 @@
             dispatch_async (dispatch_get_main_queue(), ^{
                 [self.delegate helperFinishedProcessWithResult:res];
             });
-            //[ph setPatcherFlagsObject:[PatcherFlags sharedInstance]];
-            
-            //[[CatalinaPatcherLoggingManager sharedInstance] resetLog];
-            //int ret = [ph createPatchedInstallerAppAtPath:targetPatchedAppPath usingResources:[[NSBundle mainBundle] resourcePath] fromBaseApp:installerAppPath];
             
         }
     });

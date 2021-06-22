@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "OCPatchHandler.h"
 
 
 typedef enum {
@@ -28,6 +29,7 @@ typedef enum {
 
 + (OCErrorHandler *)sharedInstance;
 -(void)handleApplicationError:(ApplicationError)err;
+-(void)handleHelperError:(PatchHandlerResult)result;
 
 
 @end

@@ -7,19 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OCDriveInfo.h"
+#import "OCDriveManager.h"
 #import "OCLoggingManagerClient.h"
 #import "OCFlagManager.h"
 
 #define SERVER_ID "org.dortania.OpenCore-Patcher"
 #define MAIN_BINARY "OCLP-CLI"
 #define OC_BUILD_PATH "/private/var/tmp"
-#define OC_BUILD_PATH_OUT "/private/var/tmp/Build-Folder"
+#define OC_BUILD_PATH_OUT "/private/var/tmp/Build-Folder/OpenCore-RELEASE"
+#define ESPMountPoint "/private/var/tmp/esp"
 
+typedef enum {
+    PatchHandlerResultSuccess = 0,
+    PatchHandlerResultFailedESPMount = 1,
+    PatchHandlerResultFailedESPUnmount = 2,
+    PatchHandlerResultFailedOCBuild = 3
+}PatchHandlerResult;
 
-@interface OCPatchHandler : NSObject {
+@interface OCPatchHandler : NSObject <OCDriveManagerDelegate> {
     NSConnection *connection;
     BOOL shouldKeepRunning;
+    BOOL DMOperationWait;
+    DMStatus DMOperationReturn;
 }
 
 @property (nonatomic, strong) OCFlagManager *flagManager;
@@ -29,7 +38,7 @@
 -(id)init;
 -(void)startIPCService;
 -(oneway void)terminateHelper;
--(NSInteger)buildOpenCoreAtPath:(NSString *)buildPath;
--(NSInteger)installOpenCoreAtPath:(NSString *)buildPath toDrive:(OCDriveInfo *)drive;
+-(PatchHandlerResult)buildOpenCore;
+-(PatchHandlerResult)installOpenCoreToDrive:(OCDriveInfo *)drive;
 
 @end

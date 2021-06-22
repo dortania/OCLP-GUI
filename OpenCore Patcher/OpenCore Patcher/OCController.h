@@ -18,7 +18,7 @@
 @protocol OCControllerDelegate <NSObject>
 
 -(void)helperFailedLaunchWithError:(OSStatus)err;
--(void)helperFinishedProcessWithResult:(NSInteger)status;
+-(void)helperFinishedProcessWithResult:(PatchHandlerResult)status;
 
 @end
 
@@ -27,7 +27,7 @@
 @property (strong) id <OCControllerDelegate> delegate;
 
 + (OCController *)sharedInstance;
--(void)startBuildAndInstall;
+-(void)startBuildAndInstallToDrive:(OCDriveInfo *)drive;
 -(NSArray *)getMacModelsList;
 -(NSString *)getMachineModel;
 

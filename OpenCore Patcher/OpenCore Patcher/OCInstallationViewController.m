@@ -22,11 +22,6 @@
     [OCLoggingManager sharedInstance].delegate = self;
     [OCController sharedInstance].delegate = self;
     [self.logTextView setFont:[NSFont fontWithName:@"Courier" size:12]];
-    
-    [self disableUI];
-    [[OCController sharedInstance] startBuildAndInstall];
-    [[OCLoggingManager sharedInstance] resetLog];
-    [self.logTextView setString:[OCLoggingManager sharedInstance].log];
 }
 
 -(void)disableUI {
@@ -52,7 +47,10 @@
 }
 
 -(void)beginInstallationOnDrive:(OCDriveInfo *)drive {
-    
+    [self disableUI];
+    [[OCController sharedInstance] startBuildAndInstallToDrive:drive];
+    [[OCLoggingManager sharedInstance] resetLog];
+    [self.logTextView setString:[OCLoggingManager sharedInstance].log];
 }
 
 #pragma mark Delegated Functions
@@ -65,17 +63,19 @@
             break;
             
         default:
-            
+            [[OCErrorHandler sharedInstance] handleApplicationError:ApplicationErrorHelperLaunchFailed];
             break;
     }
 }
 
--(void)helperFinishedProcessWithResult:(NSInteger)status {
+-(void)helperFinishedProcessWithResult:(PatchHandlerResult)status {
+    [[OCErrorHandler sharedInstance] handleHelperError:status];
     [self enableUI];
 }
 
 -(void)logDidUpdateWithText:(NSString *)text {
     [self.logTextView setString:text];
+    [self.logTextView scrollToEndOfDocument:self];
 }
 
 @end

@@ -53,7 +53,7 @@
 }
 
 -(void)driveWasAttached:(OCDriveInfo *)drive {
-    if (drive.physical && drive.hasESP) {
+    if (drive.physical && drive.esp) {
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [availableDrives addObject:drive];
             [self.driveSelectionCollectionView setContent:availableDrives];

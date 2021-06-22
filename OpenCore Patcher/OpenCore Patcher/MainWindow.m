@@ -20,7 +20,7 @@
         visibleViewController = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
         visibleViewController.delegate = self;
     }
-    
+    [OCErrorHandler sharedInstance].delegate = self;
     [self.window.contentView addSubview:visibleViewController.view];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
@@ -38,6 +38,15 @@
     [self.window.contentView addSubview:controller.view];
     visibleViewController = controller;
     visibleViewController.delegate = self;
+}
+
+-(void)displayAlertWithMessage:(NSString *)msg andInfo:(NSString *)info {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setAlertStyle:NSCriticalAlertStyle];
+    [alert setMessageText:msg];
+    [alert setInformativeText:info];
+    [alert addButtonWithTitle:@"OK"];
+    [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:nil contextInfo:nil];
 }
 
 

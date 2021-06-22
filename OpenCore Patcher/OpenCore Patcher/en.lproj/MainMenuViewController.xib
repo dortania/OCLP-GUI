@@ -79,6 +79,6 @@
     <resources>
         <image name="OC-Build" width="256" height="256"/>
         <image name="ProductPageIcon-test" width="928" height="928"/>
-        <image name="settings" width="80" height="80"/>
+        <image name="settings" width="256" height="256"/>
     </resources>
 </document>

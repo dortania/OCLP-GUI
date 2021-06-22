@@ -19,5 +19,6 @@
 @property (strong) id <OCLoggingManagerClientDelegate> delegate;
 
 -(void)setOutputPipe:(NSPipe *)pipe;
+-(void)addLogEntry:(NSString *)text;
 
 @end

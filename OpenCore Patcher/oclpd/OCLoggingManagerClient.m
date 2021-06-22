@@ -38,4 +38,8 @@
     }
 }
 
+-(void)addLogEntry:(NSString *)text {
+    [self.delegate logDidUpdateWithText:[NSString stringWithFormat:@"%@\n", text]];
+}
+
 @end

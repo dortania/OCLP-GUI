@@ -21,7 +21,6 @@
 @property (nonatomic, strong) NSString *log;
 
 + (OCLoggingManager *)sharedInstance;
--(void)addLogEntry:(NSString *)entry;
 -(void)resetLog;
 
 @end

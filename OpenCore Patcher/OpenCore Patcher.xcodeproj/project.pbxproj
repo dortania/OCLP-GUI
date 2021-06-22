@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8739C80926803C8C0080578E /* OCLoggingManagerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C80826803C8C0080578E /* OCLoggingManagerClient.m */; };
 		8739C80A26803FC90080578E /* OCLoggingManagerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C80826803C8C0080578E /* OCLoggingManagerClient.m */; };
+		874715D426828F56005AF875 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 874715D326828F56005AF875 /* Credits.rtf */; };
+		874715D826829293005AF875 /* settings.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 874715D726829293005AF875 /* settings.tiff */; };
 		876B066626754AE7008E24F3 /* OCInstallationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876B066426754AE7008E24F3 /* OCInstallationViewController.m */; };
 		876B066826754C21008E24F3 /* OCInstallationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 876B066A26754C21008E24F3 /* OCInstallationViewController.xib */; };
 		876E651826705C4E006553B8 /* DriveSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876E651626705C4E006553B8 /* DriveSelectionViewController.m */; };
@@ -16,6 +18,7 @@
 		876E652026705FF5006553B8 /* DriveSelectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 876E651E26705FF5006553B8 /* DriveSelectionItem.m */; };
 		876E652226706121006553B8 /* DriveSelectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 876E652426706121006553B8 /* DriveSelectionItem.xib */; };
 		876E652726706192006553B8 /* OCDriveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 876E652626706192006553B8 /* OCDriveInfo.m */; };
+		877388B32681676B0067E175 /* OCLP-CLI in Resources */ = {isa = PBXBuildFile; fileRef = 877388B22681676B0067E175 /* OCLP-CLI */; };
 		8775F802266EFA0D00232783 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8775F801266EFA0D00232783 /* AppDelegate.m */; };
 		8775F804266EFA0D00232783 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8775F803266EFA0D00232783 /* main.m */; };
 		8775F806266EFA0D00232783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8775F805266EFA0D00232783 /* Images.xcassets */; };
@@ -31,12 +34,10 @@
 		878F74AC2680060600F578CD /* OCFlagManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87995C53267C240000C7EF2D /* OCFlagManager.m */; };
 		878F74AD268006C700F578CD /* OCFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 87995C56267C246A00C7EF2D /* OCFlag.m */; };
 		878F74AE2680086600F578CD /* OCDriveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A84D5726707B6D00BEBD2B /* OCDriveManager.m */; };
-		878F74B026802A6B00F578CD /* OCLP-CLI in Resources */ = {isa = PBXBuildFile; fileRef = 878F74AF26802A6B00F578CD /* OCLP-CLI */; };
 		87995C54267C240000C7EF2D /* OCFlagManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87995C53267C240000C7EF2D /* OCFlagManager.m */; };
 		87995C57267C246A00C7EF2D /* OCFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 87995C56267C246A00C7EF2D /* OCFlag.m */; };
 		87995C5B267C3E1300C7EF2D /* FlagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87995C59267C3E1300C7EF2D /* FlagsViewController.m */; };
 		87995C5D267C3E3300C7EF2D /* FlagsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87995C5F267C3E3300C7EF2D /* FlagsViewController.xib */; };
-		87995C6D267C440200C7EF2D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 87995C6C267C440200C7EF2D /* settings.png */; };
 		87A84D5826707B6D00BEBD2B /* OCDriveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A84D5726707B6D00BEBD2B /* OCDriveManager.m */; };
 		87BD9A80267D3D49003AC09D /* OCDriveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 876E652626706192006553B8 /* OCDriveInfo.m */; };
 		87BD9A81267D3E86003AC09D /* OCLoggingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BD9A7E267D3CDF003AC09D /* OCLoggingManager.m */; };
@@ -49,10 +50,6 @@
 		87D82F3A266EFCC700C59782 /* OC-Patcher.icns in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F39266EFCC700C59782 /* OC-Patcher.icns */; };
 		87D82F41266EFCD100C59782 /* OC-Build.png in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F3B266EFCD100C59782 /* OC-Build.png */; };
 		87D82F42266EFCD100C59782 /* OC-Patcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F3C266EFCD100C59782 /* OC-Patcher.png */; };
-		87D82F43266EFCD100C59782 /* OC-Picker-External.png in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F3D266EFCD100C59782 /* OC-Picker-External.png */; };
-		87D82F44266EFCD100C59782 /* OC-Picker-Internal.png in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F3E266EFCD100C59782 /* OC-Picker-Internal.png */; };
-		87D82F45266EFCD100C59782 /* OC-Picker-SD.png in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F3F266EFCD100C59782 /* OC-Picker-SD.png */; };
-		87D82F46266EFCD100C59782 /* OC-Picker-SSD.png in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F40266EFCD100C59782 /* OC-Picker-SSD.png */; };
 		87D82F4C266EFF7600C59782 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F4E266EFF7600C59782 /* Localizable.strings */; };
 		87D82F4F266EFF8700C59782 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F51266EFF8700C59782 /* MainWindow.xib */; };
 		87D82F55266F001D00C59782 /* OCErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D82F54266F001D00C59782 /* OCErrorHandler.m */; };
@@ -91,6 +88,8 @@
 /* Begin PBXFileReference section */
 		8739C80726803C8C0080578E /* OCLoggingManagerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLoggingManagerClient.h; sourceTree = "<group>"; };
 		8739C80826803C8C0080578E /* OCLoggingManagerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCLoggingManagerClient.m; sourceTree = "<group>"; };
+		874715D326828F56005AF875 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		874715D726829293005AF875 /* settings.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = settings.tiff; sourceTree = "<group>"; };
 		876B066326754AE7008E24F3 /* OCInstallationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCInstallationViewController.h; sourceTree = "<group>"; };
 		876B066426754AE7008E24F3 /* OCInstallationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCInstallationViewController.m; sourceTree = "<group>"; };
 		876B066926754C21008E24F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OCInstallationViewController.xib; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		876E652326706121006553B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DriveSelectionItem.xib; sourceTree = "<group>"; };
 		876E652526706192006553B8 /* OCDriveInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDriveInfo.h; sourceTree = "<group>"; };
 		876E652626706192006553B8 /* OCDriveInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDriveInfo.m; sourceTree = "<group>"; };
+		877388B22681676B0067E175 /* OCLP-CLI */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "OCLP-CLI"; sourceTree = "<group>"; };
 		8775F7FB266EFA0D00232783 /* OpenCore Patcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenCore Patcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8775F7FF266EFA0D00232783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8775F800266EFA0D00232783 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,7 +121,6 @@
 		878D3E52267AE62D00EA4C33 /* OCPatchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPatchHandler.h; sourceTree = "<group>"; };
 		878D3E53267AE62D00EA4C33 /* OCPatchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPatchHandler.m; sourceTree = "<group>"; };
 		878F74AA2680010100F578CD /* macModels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = macModels.plist; sourceTree = "<group>"; };
-		878F74AF26802A6B00F578CD /* OCLP-CLI */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "OCLP-CLI"; sourceTree = "<group>"; };
 		87995C52267C240000C7EF2D /* OCFlagManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCFlagManager.h; sourceTree = "<group>"; };
 		87995C53267C240000C7EF2D /* OCFlagManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFlagManager.m; sourceTree = "<group>"; };
 		87995C55267C246A00C7EF2D /* OCFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCFlag.h; sourceTree = "<group>"; };
@@ -129,7 +128,6 @@
 		87995C58267C3E1300C7EF2D /* FlagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagsViewController.h; sourceTree = "<group>"; };
 		87995C59267C3E1300C7EF2D /* FlagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagsViewController.m; sourceTree = "<group>"; };
 		87995C5E267C3E3300C7EF2D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlagsViewController.xib; sourceTree = "<group>"; };
-		87995C6C267C440200C7EF2D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		87A84D5626707B6D00BEBD2B /* OCDriveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDriveManager.h; sourceTree = "<group>"; };
 		87A84D5726707B6D00BEBD2B /* OCDriveManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDriveManager.m; sourceTree = "<group>"; };
 		87BD9A7D267D3CDF003AC09D /* OCLoggingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCLoggingManager.h; path = ../oclpd/OCLoggingManager.h; sourceTree = "<group>"; };
@@ -147,10 +145,6 @@
 		87D82F39266EFCC700C59782 /* OC-Patcher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "OC-Patcher.icns"; sourceTree = "<group>"; };
 		87D82F3B266EFCD100C59782 /* OC-Build.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OC-Build.png"; sourceTree = "<group>"; };
 		87D82F3C266EFCD100C59782 /* OC-Patcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OC-Patcher.png"; sourceTree = "<group>"; };
-		87D82F3D266EFCD100C59782 /* OC-Picker-External.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OC-Picker-External.png"; sourceTree = "<group>"; };
-		87D82F3E266EFCD100C59782 /* OC-Picker-Internal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OC-Picker-Internal.png"; sourceTree = "<group>"; };
-		87D82F3F266EFCD100C59782 /* OC-Picker-SD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OC-Picker-SD.png"; sourceTree = "<group>"; };
-		87D82F40266EFCD100C59782 /* OC-Picker-SSD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OC-Picker-SSD.png"; sourceTree = "<group>"; };
 		87D82F4D266EFF7600C59782 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		87D82F50266EFF8700C59782 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		87D82F53266F001D00C59782 /* OCErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCErrorHandler.h; sourceTree = "<group>"; };
@@ -251,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				8775F7FF266EFA0D00232783 /* Info.plist */,
+				874715D326828F56005AF875 /* Credits.rtf */,
 				8775F803266EFA0D00232783 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -292,14 +287,10 @@
 				87D82F39266EFCC700C59782 /* OC-Patcher.icns */,
 				87D82F3B266EFCD100C59782 /* OC-Build.png */,
 				87D82F3C266EFCD100C59782 /* OC-Patcher.png */,
-				87D82F3D266EFCD100C59782 /* OC-Picker-External.png */,
-				87D82F3E266EFCD100C59782 /* OC-Picker-Internal.png */,
-				87D82F3F266EFCD100C59782 /* OC-Picker-SD.png */,
-				87D82F40266EFCD100C59782 /* OC-Picker-SSD.png */,
-				878F74AF26802A6B00F578CD /* OCLP-CLI */,
+				877388B22681676B0067E175 /* OCLP-CLI */,
 				87D82F58266F134400C59782 /* OCFlags.plist */,
 				878F74AA2680010100F578CD /* macModels.plist */,
-				87995C6C267C440200C7EF2D /* settings.png */,
+				874715D726829293005AF875 /* settings.tiff */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -461,21 +452,18 @@
 				8775F809266EFA0D00232783 /* MainMenu.xib in Resources */,
 				87D82F42266EFCD100C59782 /* OC-Patcher.png in Resources */,
 				876E652226706121006553B8 /* DriveSelectionItem.xib in Resources */,
-				878F74B026802A6B00F578CD /* OCLP-CLI in Resources */,
+				877388B32681676B0067E175 /* OCLP-CLI in Resources */,
 				87D82F3A266EFCC700C59782 /* OC-Patcher.icns in Resources */,
 				87D82F4F266EFF8700C59782 /* MainWindow.xib in Resources */,
-				87D82F43266EFCD100C59782 /* OC-Picker-External.png in Resources */,
 				87D82F4C266EFF7600C59782 /* Localizable.strings in Resources */,
-				87D82F46266EFCD100C59782 /* OC-Picker-SSD.png in Resources */,
 				87D82F38266EFCBD00C59782 /* ProductPageIcon-test.png in Resources */,
 				876B066826754C21008E24F3 /* OCInstallationViewController.xib in Resources */,
+				874715D426828F56005AF875 /* Credits.rtf in Resources */,
 				87D82F59266F134400C59782 /* OCFlags.plist in Resources */,
-				87995C6D267C440200C7EF2D /* settings.png in Resources */,
+				874715D826829293005AF875 /* settings.tiff in Resources */,
 				876E651A26705C7A006553B8 /* DriveSelectionViewController.xib in Resources */,
 				87995C5D267C3E3300C7EF2D /* FlagsViewController.xib in Resources */,
-				87D82F45266EFCD100C59782 /* OC-Picker-SD.png in Resources */,
 				87C324BD267532E800D537CE /* MainMenuViewController.xib in Resources */,
-				87D82F44266EFCD100C59782 /* OC-Picker-Internal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

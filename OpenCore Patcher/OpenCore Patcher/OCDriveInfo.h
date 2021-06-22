@@ -22,7 +22,7 @@
 @property (nonatomic, strong) NSString *iconName;
 @property (nonatomic, assign) double appearanceTime;
 @property (nonatomic, assign) BOOL physical;
-@property (nonatomic, assign) BOOL hasESP;
+@property (nonatomic, strong) OCDriveInfo *esp;
 -(NSString *)iconBundlePath;
 -(BOOL)isEqual:(OCDriveInfo *)other;
 

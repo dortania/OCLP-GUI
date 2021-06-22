@@ -33,17 +33,40 @@
         [alert addButtonWithTitle:@"OK"];
         [alert runModal];
     } else {
-        
+        [self.delegate displayAlertWithMessage:msg andInfo:info];
     }
 }
 
 -(void)handleApplicationError:(ApplicationError)err {
-    
-    
+    switch (err) {
+        case ApplicationErrorHelperLaunchFailed:
+            [self displayAlertWithMessage:NSLocalizedString(@"ERR_HELPER_MSG", nil) inlcudingInfo:NSLocalizedString(@"ERR_HELPER_INFO", nil)];
+            break;
+            
+        default:
+            [self displayAlertWithMessage:NSLocalizedString(@"ERR_UNKNOWN_MSG", nil) inlcudingInfo:NSLocalizedString(@"ERR_UNKNOWN_INFO", nil)];
+            break;
+    }
 }
 
--(void)handleHelperLaunchError:(OSStatus)err {
-    
+-(void)handleHelperError:(PatchHandlerResult)result {
+    switch (result) {
+        case PatchHandlerResultFailedESPMount:
+            [self displayAlertWithMessage:NSLocalizedString(@"ERR_MOUNT_ESP_MSG", nil) inlcudingInfo:NSLocalizedString(@"ERR_MOUNT_ESP_INFO", nil)];
+            break;
+        case PatchHandlerResultFailedESPUnmount:
+            [self displayAlertWithMessage:NSLocalizedString(@"ERR_UNMOUNT_ESP_MSG", nil) inlcudingInfo:NSLocalizedString(@"ERR_UNMOUNT_ESP_INFO", nil)];
+            break;
+        case PatchHandlerResultFailedOCBuild:
+            [self displayAlertWithMessage:NSLocalizedString(@"ERR_OC_BUILD_FAIL_MSG", nil) inlcudingInfo:NSLocalizedString(@"ERR_OC_BUILD_FAIL_INFO", nil)];
+            break;
+        case PatchHandlerResultSuccess:
+            break;
+            
+        default:
+            [self displayAlertWithMessage:NSLocalizedString(@"ERR_UNKNOWN_MSG", nil) inlcudingInfo:NSLocalizedString(@"ERR_UNKNOWN_INFO", nil)];
+            break;
+    }
 }
 
 @end

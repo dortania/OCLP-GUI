@@ -10,6 +10,7 @@
 #import "MainMenuViewController.h"
 #import "OCController.h"
 #import "OCLoggingManager.h"
+#import "OCErrorHandler.h"
 
 @interface OCInstallationViewController : WindowContentViewController <OCLoggingManagerDelegate, OCControllerDelegate>
 
