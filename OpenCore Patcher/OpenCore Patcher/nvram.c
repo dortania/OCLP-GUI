@@ -54,7 +54,7 @@ nvramErr getNVRAMValueForKey(char *key, char **val) {
                 valueString = dataBuffer;
             }
         }
-        *val = malloc(sizeof(valueString)+1);
+        *val = malloc(sizeof(valueString)+256);
         strcpy(*val, valueString);
         return 0;
     } else {
