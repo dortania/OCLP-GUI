@@ -24,7 +24,7 @@
     
     //Calculate height
     CGFloat baseHeight = self.view.frame.size.height - self.flagsTableView.frame.size.height;
-    CGFloat newHeight = baseHeight + (self.flagsTableView.rowHeight * ([[OCFlagManager sharedInstance] optionalFlags].count + 1));
+    CGFloat newHeight = baseHeight + ((self.flagsTableView.rowHeight + self.flagsTableView.intercellSpacing.height) * ([[OCFlagManager sharedInstance] optionalFlags].count));
     [self.delegate FlagsViewChangedToHeight:newHeight];
     
     [self.flagsTableView setDataSource:self];
