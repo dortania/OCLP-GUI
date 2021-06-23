@@ -20,7 +20,8 @@
     self = [self init];
     _arg = [d objectForKey:@kArg];
     _helpString = [d objectForKey:@kHelpString];
-    _enabled = [[d objectForKey:@kDefaultState] boolValue];
+    _enabled = NO;
+    _defaultModels = [d objectForKey:@kDefaultModels];
     return self;
 }
 

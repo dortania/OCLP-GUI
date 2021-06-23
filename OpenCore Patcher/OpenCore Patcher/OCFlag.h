@@ -10,7 +10,7 @@
 
 #define kArg "arg"
 #define kHelpString "help"
-#define kDefaultState "default"
+#define kDefaultModels "default_models"
 
 @interface OCFlag : NSObject
 
@@ -20,5 +20,6 @@
 @property (nonatomic, strong) NSString *arg;
 @property (nonatomic, strong) NSString *helpString;
 @property (nonatomic, assign) BOOL enabled;
+@property (nonatomic, strong) NSArray *defaultModels;
 
 @end

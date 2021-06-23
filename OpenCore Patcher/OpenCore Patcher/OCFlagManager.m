@@ -50,4 +50,14 @@
 -(NSArray *)sysVolPatchArgs {
     return [NSArray arrayWithObjects:@"--patch_sys_vol", nil];
 }
+-(void)setTargetModel:(NSString *)targetModel {
+    _targetModel = targetModel;
+    for (OCFlag *f in _optionalFlags) {
+        if ([f.defaultModels containsObject:targetModel]) {
+            f.enabled = YES;
+        } else {
+            f.enabled = NO;
+        }
+    }
+}
 @end

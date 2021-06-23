@@ -52,5 +52,6 @@
 }
 - (IBAction)setDesiredModel:(id)sender {
     [OCFlagManager sharedInstance].targetModel = [self.modelSelectionList titleOfSelectedItem];
+    [self.flagsTableView reloadData];
 }
 @end
