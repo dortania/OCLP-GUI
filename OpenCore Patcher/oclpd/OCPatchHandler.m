@@ -19,6 +19,9 @@
 }
 
 -(void)startIPCService {
+    if (setuid(0) != 0) {
+        NSLog(@"Could not set UID");
+    }
     connection = [[NSConnection alloc] init];
     [connection setRootObject:self];
     [connection registerName:@SERVER_ID];
@@ -35,7 +38,7 @@
     [OCPythonBin setLaunchPath:[self.resourcesPath stringByAppendingPathComponent:@MAIN_BINARY]];
     [OCPythonBin setArguments:[self.flagManager buildArgs]];
     [OCPythonBin setCurrentDirectoryPath:@OC_BUILD_PATH];
-    [OCPythonBin setEnvironment:@{@"TERM": @"xterm", @"PATH":@"/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"}];
+    [OCPythonBin setEnvironment:@{@"TERM": @"xterm", @"PATH":@"/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin", @"PYTHONIOENCODING": @"UTF-8"}];
     NSPipe *out = [NSPipe pipe];
     [OCPythonBin setStandardOutput:out];
     [OCPythonBin setStandardError:out];
@@ -103,7 +106,7 @@
     [OCPythonBin setLaunchPath:[self.resourcesPath stringByAppendingPathComponent:@MAIN_BINARY]];
     [OCPythonBin setArguments:[self.flagManager sysVolPatchArgs]];
     [OCPythonBin setCurrentDirectoryPath:@OC_BUILD_PATH];
-    [OCPythonBin setEnvironment:@{@"TERM": @"xterm", @"PATH":@"/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"}];
+    [OCPythonBin setEnvironment:@{@"TERM": @"xterm", @"PATH":@"/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin", @"PYTHONIOENCODING": @"UTF-8"}];
     NSPipe *out = [NSPipe pipe];
     [OCPythonBin setStandardOutput:out];
     [OCPythonBin setStandardError:out];
