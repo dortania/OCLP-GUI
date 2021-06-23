@@ -4,7 +4,7 @@ Support package for [OpenCore Legacy Patcher](https://github.com/dortania/OpenCo
 
 <img src="images/main-menu.png" alt="OpenCore Patcher Logo" width="512" />
 
-[Nightly builds](https://nightly.link/dortania/OCLP-GUI/workflows/build-app/main/OpenCore-Patcher-GUI.app.zip)
+[Nightly builds](https://nightly.link/dortania/OCLP-GUI/workflows/build-app/master/OpenCore-Patcher-GUI.app.zip)
 
 ### Credits
 
