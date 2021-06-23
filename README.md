@@ -2,7 +2,8 @@
 
 Support package for [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher) providing a GUI interface to the CLI application.
 
-![](./images/main-menu.png)
+<img src="images/main-menu.png" alt="OpenCore Patcher Logo" width="512" />
+
 
 ### Credits
 
