@@ -44,6 +44,7 @@
 		87C324BB267532D600D537CE /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C324B9267532D600D537CE /* MainMenuViewController.m */; };
 		87C324BD267532E800D537CE /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C324BF267532E800D537CE /* MainMenuViewController.xib */; };
 		87C324C2267534E500D537CE /* WindowContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C324C1267534E500D537CE /* WindowContentViewController.m */; };
+		87D6E9B32682E429007BA42E /* nvram.c in Sources */ = {isa = PBXBuildFile; fileRef = 87D6E9B12682E429007BA42E /* nvram.c */; };
 		87D82F31266EFA5F00C59782 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D82F2F266EFA5F00C59782 /* MainWindow.m */; };
 		87D82F35266EFC3C00C59782 /* OCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D82F34266EFC3C00C59782 /* OCController.m */; };
 		87D82F38266EFCBD00C59782 /* ProductPageIcon-test.png in Resources */ = {isa = PBXBuildFile; fileRef = 87D82F37266EFCBD00C59782 /* ProductPageIcon-test.png */; };
@@ -137,6 +138,8 @@
 		87C324BE267532E800D537CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenuViewController.xib; sourceTree = "<group>"; };
 		87C324C0267534E500D537CE /* WindowContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowContentViewController.h; sourceTree = "<group>"; };
 		87C324C1267534E500D537CE /* WindowContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowContentViewController.m; sourceTree = "<group>"; };
+		87D6E9B12682E429007BA42E /* nvram.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nvram.c; sourceTree = "<group>"; };
+		87D6E9B22682E429007BA42E /* nvram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nvram.h; sourceTree = "<group>"; };
 		87D82F2E266EFA5F00C59782 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		87D82F2F266EFA5F00C59782 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
 		87D82F33266EFC3C00C59782 /* OCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCController.h; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				876E651426705BFE006553B8 /* View Controllers */,
 				87D82F52266EFFFD00C59782 /* Cocoa Helpers */,
 				87D82F47266EFEC200C59782 /* Classes */,
+				87D6E9B02682E416007BA42E /* Helpers */,
 				87D82F49266EFF3400C59782 /* Localized Strings */,
 				87D82F36266EFCB400C59782 /* Resources */,
 				8775F7FE266EFA0D00232783 /* Supporting Files */,
@@ -278,6 +282,15 @@
 				8739C80826803C8C0080578E /* OCLoggingManagerClient.m */,
 			);
 			path = oclpd;
+			sourceTree = "<group>";
+		};
+		87D6E9B02682E416007BA42E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				87D6E9B12682E429007BA42E /* nvram.c */,
+				87D6E9B22682E429007BA42E /* nvram.h */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		87D82F36266EFCB400C59782 /* Resources */ = {
@@ -487,6 +500,7 @@
 				876E652726706192006553B8 /* OCDriveInfo.m in Sources */,
 				8775F804266EFA0D00232783 /* main.m in Sources */,
 				876E652026705FF5006553B8 /* DriveSelectionItem.m in Sources */,
+				87D6E9B32682E429007BA42E /* nvram.c in Sources */,
 				8775F802266EFA0D00232783 /* AppDelegate.m in Sources */,
 				87BD9A81267D3E86003AC09D /* OCLoggingManager.m in Sources */,
 				8778004E2674387B00FAD94B /* DriveSelectionCollectionView.m in Sources */,

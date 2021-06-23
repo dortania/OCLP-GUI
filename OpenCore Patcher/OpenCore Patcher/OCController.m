@@ -94,7 +94,18 @@
 -(NSArray *)getMacModelsList {
     return [[NSArray alloc] initWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@MacModelsPlist]];
 }
--(NSString *)getMachineModel {
+-(NSString *)getMachineModelNVRAM {
+    NSString *macModel=@"";
+    char *ret;
+    int status = getNVRAMValueForKey(kNVRAMMacModel, &ret);
+    if (status == 0) {
+        if (ret) {
+            macModel = [NSString stringWithUTF8String:ret];
+        }
+    }
+    return macModel;
+}
+-(NSString *)getMachineModelSysctl {
     NSString *macModel=@"";
     size_t len=0;
     sysctlbyname("hw.model", nil, &len, nil, 0);
@@ -104,6 +115,13 @@
         sysctlbyname("hw.model", model, &len, nil, 0);
         macModel=[NSString stringWithFormat:@"%s", model];
         free(model);
+    }
+    return macModel;
+}
+-(NSString *)getMachineModel {
+    NSString *macModel = [self getMachineModelNVRAM];
+    if ([macModel isEqualToString:@""]) {
+        macModel = [self getMachineModelSysctl];
     }
     return macModel;
 }
