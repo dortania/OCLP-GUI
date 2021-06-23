@@ -31,7 +31,7 @@
                     </textFieldCell>
                 </textField>
                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="OY2-gR-ndK">
-                    <rect key="frame" x="20" y="66" width="428" height="372"/>
+                    <rect key="frame" x="20" y="61" width="428" height="377"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" id="M6W-Ws-K7o">
                         <rect key="frame" x="1" y="1" width="223" height="133"/>
@@ -41,10 +41,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="223" height="370"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="411" height="370"/>
+                                <size key="minSize" width="411" height="375"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="411" height="370"/>
+                                <size key="minSize" width="411" height="375"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                             </textView>
                         </subviews>
