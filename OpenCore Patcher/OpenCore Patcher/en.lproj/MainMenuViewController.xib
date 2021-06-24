@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="468" height="309"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="A9u-eb-Fmo">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9u-eb-Fmo">
                     <rect key="frame" x="67" y="259" width="335" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="OpenCore Legacy Patcher" id="xxh-xq-UO4">
@@ -28,7 +28,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0SM-CJ-Kqb">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0SM-CJ-Kqb">
                     <rect key="frame" x="198" y="234" width="72" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="v0.0.0" id="kgb-Tr-yC0">
@@ -37,9 +37,12 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button id="PFD-JW-CFD">
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PFD-JW-CFD">
                     <rect key="frame" x="20" y="20" width="171" height="187"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <string key="toolTip">Builds and Installs OpenCore to a selected drive. 
+
+Note drive must be formatted as GUID Partition Map to be used</string>
                     <buttonCell key="cell" type="square" title="Build and Install OpenCore" bezelStyle="shadowlessSquare" image="OC-Build" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="I9J-fj-lD8">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -48,7 +51,7 @@
                         <action selector="startBuildAndInstall:" target="-2" id="v0A-f2-rg0"/>
                     </connections>
                 </button>
-                <button id="GOz-yG-WRS">
+                <button toolTip="Patches the root volume to enable features such as Graphics Acceleration" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOz-yG-WRS">
                     <rect key="frame" x="279" y="20" width="169" height="186"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Patch System Volume" bezelStyle="shadowlessSquare" image="ProductPageIcon-test" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="PDN-5O-qOy">
@@ -59,7 +62,7 @@
                         <action selector="startPatchSystemVolume:" target="-2" id="YU8-XK-sgA"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="jVz-OM-QWg">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVz-OM-QWg">
                     <rect key="frame" x="408" y="261" width="40" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="settings" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dMX-Oa-Qa6">
