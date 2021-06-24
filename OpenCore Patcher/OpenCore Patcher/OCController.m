@@ -29,6 +29,7 @@
 }
 
 -(void)startBuildAndInstallToDrive:(OCDriveInfo *)drive {
+    [OCFlagManager sharedInstance].targetDrive = drive;
     NSLog(@"Initializing OC Daemon");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         STPrivilegedTask *t = [[STPrivilegedTask alloc] initWithLaunchPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"oclpd"]];

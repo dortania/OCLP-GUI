@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *optionalFlags;
 @property (nonatomic, strong) NSString *targetModel;
 @property (nonatomic, strong) NSString *machineModel;
+@property (nonatomic, strong) OCDriveInfo *targetDrive;
 
 
 + (OCFlagManager *)sharedInstance;

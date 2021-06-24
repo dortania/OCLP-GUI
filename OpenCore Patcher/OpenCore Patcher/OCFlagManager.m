@@ -34,6 +34,8 @@
     
     NSMutableArray *args = [[NSMutableArray alloc] init];
     [args addObject:@"--build"];
+    [args addObject:@"--disk"];
+    [args addObject:_targetDrive.bsdName];
     
     for (OCFlag *flag in self.optionalFlags) {
         if (flag.enabled) {
