@@ -75,14 +75,24 @@
     [self.loggingClient addLogEntry:@"Copying OpenCore Files..."];
     
     for (NSString *rootItem in [man contentsOfDirectoryAtPath:@OC_BUILD_PATH_OUT error:nil]) {
-        if (![man fileExistsAtPath:[@ESPMountPoint stringByAppendingPathComponent:rootItem]]) {
-            [man createDirectoryAtPath:[@ESPMountPoint stringByAppendingPathComponent:rootItem] withIntermediateDirectories:YES attributes:nil error:nil];
-        }
-        for (NSString *item in [man contentsOfDirectoryAtPath:[@OC_BUILD_PATH_OUT stringByAppendingPathComponent:rootItem] error:nil]) {
-            if ([man fileExistsAtPath:[[@ESPMountPoint stringByAppendingPathComponent:rootItem] stringByAppendingPathComponent:item]]) {
-                [man removeItemAtPath:[[@ESPMountPoint stringByAppendingPathComponent:rootItem] stringByAppendingPathComponent:item] error:nil];
+        BOOL isDirectory = NO;
+        if ([man fileExistsAtPath:[@OC_BUILD_PATH_OUT stringByAppendingPathComponent:rootItem] isDirectory:&isDirectory]) {
+            if (isDirectory) {
+                if (![man fileExistsAtPath:[@ESPMountPoint stringByAppendingPathComponent:rootItem]]) {
+                    [man createDirectoryAtPath:[@ESPMountPoint stringByAppendingPathComponent:rootItem] withIntermediateDirectories:YES attributes:nil error:nil];
+                }
+                for (NSString *item in [man contentsOfDirectoryAtPath:[@OC_BUILD_PATH_OUT stringByAppendingPathComponent:rootItem] error:nil]) {
+                    if ([man fileExistsAtPath:[[@ESPMountPoint stringByAppendingPathComponent:rootItem] stringByAppendingPathComponent:item]]) {
+                        [man removeItemAtPath:[[@ESPMountPoint stringByAppendingPathComponent:rootItem] stringByAppendingPathComponent:item] error:nil];
+                    }
+                    [man copyItemAtPath:[[@OC_BUILD_PATH_OUT stringByAppendingPathComponent:rootItem] stringByAppendingPathComponent:item] toPath:[[@ESPMountPoint stringByAppendingPathComponent:rootItem] stringByAppendingPathComponent:item] error:nil];
+                }
+            } else {
+                if ([man fileExistsAtPath:[@ESPMountPoint stringByAppendingPathComponent:rootItem]]) {
+                    [man removeItemAtPath:[@ESPMountPoint stringByAppendingPathComponent:rootItem] error:nil];
+                }
+                [man copyItemAtPath:[@OC_BUILD_PATH_OUT stringByAppendingPathComponent:rootItem] toPath:[@ESPMountPoint stringByAppendingPathComponent:rootItem] error:nil];
             }
-            [man copyItemAtPath:[[@OC_BUILD_PATH_OUT stringByAppendingPathComponent:rootItem] stringByAppendingPathComponent:item] toPath:[[@ESPMountPoint stringByAppendingPathComponent:rootItem] stringByAppendingPathComponent:item] error:nil];
         }
     }
     
