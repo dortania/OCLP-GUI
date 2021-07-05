@@ -14,7 +14,7 @@
 #define SERVER_ID "org.dortania.OpenCore-Patcher"
 #define MAIN_BINARY "OCLP-CLI"
 #define OC_BUILD_PATH "/private/tmp"
-#define OC_BUILD_PATH_OUT "/private/tmp/Build-Folder/OpenCore-RELEASE"
+#define OC_BUILD_PATH_OUT "/private/tmp/Build-Folder/OpenCore-Build"
 #define ESPMountPoint "/private/tmp/esp"
 
 typedef enum {

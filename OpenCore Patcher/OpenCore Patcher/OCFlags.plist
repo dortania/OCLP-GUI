@@ -246,16 +246,6 @@
 	</dict>
 	<dict>
 		<key>arg</key>
-		<string>--terascale_2</string>
-		<key>help</key>
-		<string>TeraScale 2 Acceleration</string>
-		<key>default_models</key>
-		<array>
-			<string>dortania1,1</string>
-		</array>
-	</dict>
-	<dict>
-		<key>arg</key>
 		<string>--moderate_smbios</string>
 		<key>help</key>
 		<string>Moderate SMBIOS Patching</string>
