@@ -206,6 +206,16 @@
 	</dict>
 	<dict>
 		<key>arg</key>
+		<string>--wlan</string>
+		<key>help</key>
+		<string>Enable Wake on WLAN</string>
+		<key>default_models</key>
+		<array>
+			<string>dortania1,1</string>
+		</array>
+	</dict>
+	<dict>
+		<key>arg</key>
 		<string>--vault</string>
 		<key>help</key>
 		<string>Vault</string>
