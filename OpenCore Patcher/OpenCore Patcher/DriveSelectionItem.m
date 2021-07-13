@@ -30,6 +30,15 @@
         NSImage *img = [[NSBundle bundleWithPath:[driveInfo iconBundlePath]] imageForResource:[driveInfo iconName]];
         [self.driveSelectionImage setImage:img];
         [self.driveSelectionNameField setStringValue:[driveInfo name]];
+        NSString *driveSize;
+        if (driveInfo.size / 1000000000000.0 >= 1) {
+            driveSize = [NSString stringWithFormat:@"%ldTB", driveInfo.size / 1000000000000];
+        } else if (driveInfo.size / 1000000000.0 >= 1) {
+            driveSize = [NSString stringWithFormat:@"%ldGB", driveInfo.size / 1000000000];
+        } else {
+            driveSize = [NSString stringWithFormat:@"%ldMB", driveInfo.size / 1000000];
+        }
+        [self.driveSelectionInfoField setStringValue:[NSString stringWithFormat:@"%@ | %@", driveInfo.bsdName, driveSize]];
     }
 }
 

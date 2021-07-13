@@ -32,7 +32,7 @@
 }
 
 -(void)adaptViewSize {
-    if (availableDrives.count > 2 && availableDrives.count < 6) {
+    if (availableDrives.count > 2) {
         CGFloat width = [self.driveSelectionCollectionView itemPrototype].view.frame.size.width * availableDrives.count;
         if (width > [[NSScreen mainScreen] frame].size.width) {
             width = [[NSScreen mainScreen] frame].size.width - 100;

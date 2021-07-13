@@ -17,5 +17,6 @@
 -(void)setRepresentedObject:(id)representedObject;
 @property (strong) IBOutlet NSImageView *driveSelectionImage;
 @property (strong) IBOutlet NSTextField *driveSelectionNameField;
+@property (strong) IBOutlet NSTextField *driveSelectionInfoField;
 
 @end
