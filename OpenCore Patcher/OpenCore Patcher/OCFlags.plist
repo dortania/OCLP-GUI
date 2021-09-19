@@ -69,51 +69,6 @@
 	</dict>
 	<dict>
 		<key>arg</key>
-		<string>--disable_amfi</string>
-		<key>help</key>
-		<string>Disable AMFI</string>
-		<key>default_models</key>
-		<array>
-			<string>MacBook4,1</string>
-			<string>MacBook5,1</string>
-			<string>MacBook5,2</string>
-			<string>MacBook6,1</string>
-			<string>MacBook7,1</string>
-			<string>MacBookAir2,1</string>
-			<string>MacBookAir3,1</string>
-			<string>MacBookAir3,2</string>
-			<string>MacBookAir4,1</string>
-			<string>MacBookAir4,2</string>
-			<string>MacBookPro4,1</string>
-			<string>MacBookPro5,1</string>
-			<string>MacBookPro5,2</string>
-			<string>MacBookPro5,3</string>
-			<string>MacBookPro5,4</string>
-			<string>MacBookPro5,5</string>
-			<string>MacBookPro6,1</string>
-			<string>MacBookPro6,2</string>
-			<string>MacBookPro7,1</string>
-			<string>MacBookPro8,1</string>
-			<string>MacBookPro8,2</string>
-			<string>MacBookPro8,3</string>
-			<string>Macmini3,1</string>
-			<string>Macmini4,1</string>
-			<string>Macmini5,1</string>
-			<string>Macmini5,2</string>
-			<string>Macmini5,3</string>
-			<string>iMac7,1</string>
-			<string>iMac8,1</string>
-			<string>iMac9,1</string>
-			<string>iMac10,1</string>
-			<string>iMac11,1</string>
-			<string>iMac11,2</string>
-			<string>iMac11,3</string>
-			<string>iMac12,1</string>
-			<string>iMac12,2</string>
-		</array>
-	</dict>
-	<dict>
-		<key>arg</key>
 		<string>--disable_smb</string>
 		<key>help</key>
 		<string>Disable SecureBootModel</string>
