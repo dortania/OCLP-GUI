@@ -47,6 +47,7 @@
 			<string>MacBookPro9,2</string>
 			<string>MacBookPro10,1</string>
 			<string>MacBookPro10,2</string>
+			<string>MacBookPro11,3</string>
 			<string>Macmini3,1</string>
 			<string>Macmini4,1</string>
 			<string>Macmini5,1</string>
@@ -64,7 +65,11 @@
 			<string>iMac12,1</string>
 			<string>iMac12,2</string>
 			<string>iMac13,1</string>
+			<string>iMac13,2</string>
 			<string>iMac13,3</string>
+			<string>iMac14,1</string>
+			<string>iMac14,2</string>
+			<string>iMac14,3</string>
 		</array>
 	</dict>
 	<dict>
